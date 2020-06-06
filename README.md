@@ -1,5 +1,4 @@
-[](images/logo.png)
-#e-agora
+![logo](./images/logo.png)
 
 ## What's this?
 e-agora can be described as a state of the art cloud-based serverless no-sql 
