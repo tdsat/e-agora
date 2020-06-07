@@ -56,9 +56,9 @@ What's your favorite?
 
 ## TODO
 
--[x] Translate greek comments to english so that you can fully appreciate the genius...ness of it all
--[ ] Dockerize it because why not lol
--[ ] Add licence
+ - [x] Translate greek comments to english so that you can fully appreciate the genius...ness of it all
+ - [ ] Dockerize it because why not lol
+ - [ ] Add licence
 
 ## Final notes
 
