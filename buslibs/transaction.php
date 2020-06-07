@@ -1,20 +1,20 @@
 <?php
-/* Επικύρωση εισόδου και αντιμετώπιση λαθών για τον πίνακα των συναλλαγών
-* Περιέχει τις παρακάτω υπορουτίνες
+/* Input validations and error handling for the transactions table
+* Contains the following subroutines
 * create_transaction($buyerId, $sellerId,$productId, $title)
 * read_transaction($id)
 * delete_transaction($id)
 * 
 //TODO : Implement CRUD functions for transactions
-* Σχεδιασμένο για βάση με τα παρακάτω πεδία
+* Designed for a database with the following fields
 * -------------------------------------------------------------------------
-*  idTransaction  INT       | Αυτόματη αρίθμηση. ΜΗΝ ΟΡΙΣΕΤΕ ΧΕΙΡΟΚΙΝΗΤΑ
+*  idTransaction  INT       | Auto increment. DO NOT SET MANUALLY
 * --------------------------|-----------------------------------------------
-*  idSeller       INT       | Ξένα κλειδιά των ανάλογων πινάκων. Προσοχή 
-*  idBuyer        INT       | ώστε να διατηρηθεί η ακεραιότητα της βάσης
+*  idSeller       INT       | Foreign keys of related tables. Take care to
+*  idBuyer        INT       | maintain database integrity
 *  idProduct      INT       |
 * --------------------------|-----------------------------------------------
-*  title          VarC[45]  | Αυτές οι μεταβλητές είναι ΑΠΑΡΑΙΤΗΤΕΣ.
+*  title          VarC[45]  | These variables are REQUIRED
 *  date           TIMESTAMP | 
 */
 
@@ -33,7 +33,7 @@ function create_transaction($buyer, $seller,$productId, $title,$quantity){
     $result2=  DBLib::execute_query($query);
     
     if($result1 and $result2) return 0;
-    return "Κάτι πήγε στραβά. Δοκιμάστε ξανά";
+    return "Something went wrong. Try again";
 }       
 
 function read_transaction($id){

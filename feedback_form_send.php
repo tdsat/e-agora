@@ -25,8 +25,8 @@ if(isset($_SESSION['idUsers']){
 		$query="UPDATE `buyerrating` SET `comment`= $comment , `rating`=$select , set valid=FALSE WHERE idTransaction=$_GET['s'] ΑΝD idFromUser=$_SESSION['idUsers']";
 	}
 	if($query)	$result=DBLib::execute_query($query);
-	if(!$result) $error='Υπήρξε πρόβλημα κατα την αποστολή. Δοκιμάστε ξανά';
-	else echo 'Επιτυχής αποθήκευση!Ευχαριστούμε για τον χρόνο σας.';
+	if(!$result) $error='There was an error during the submission. Try again';
+	else echo 'Successfully saved! Thank you for your time.';
 }
 
 ?>

@@ -1,5 +1,5 @@
 <?php
-//Παίρνουμε μερικά προϊόντα απο την βάση μαζί με μια φωτογραφία τους
+//Grab a few products from the database along with one of their images
 $query="SELECT `idProduct`,`idOwner`,`quantity`,`title`,`price`,`image`
 FROM `images`,`products`
 WHERE `images`.`idProduct`=`products`.`idProducts`
@@ -12,7 +12,7 @@ while($products[]=mysql_fetch_object($result));
 array_pop($products);
 
 
-//Και μετά τα εμφανίζουμε!!!!YEAH!
+//And then we display them!!!!YEAH!
 
 foreach($products as $p){
 	$p->image=base64_encode($p->image);

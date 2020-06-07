@@ -7,12 +7,12 @@ if(isset($_POST['deleteProductId'])){
 		if($_SESSION['role'] =='admin' || $_SESSION['idUsers']==$product->idOwner){
 			$result=delete_product($product->idProducts);
 			if($result) echo $result;
-			else echo "Επιτυχής διαγραφή προϊόντος";
+			else echo "Successfully deleted product";
 		}
 		else
-			echo ( "Δεν έχετε δικαιώματα να διαγράψετε αυτό το προϊόν");
+			echo ( "You are not allowed to delete this product");
 		}
 	}
-	else echo 'Αυτό το προϊόν δεν υπάρχει';
+	else echo "This product doesn't exist";
 }	
 ?>

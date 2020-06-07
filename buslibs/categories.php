@@ -1,7 +1,7 @@
 <?php
 
 
-//Επιστρέφει πίνακα με όλες τις κατηγορίες της βάσης
+//Returns an array with all the categories in the database
 function read_categories(){
     $rows = NULL;
     $num = 0;

@@ -6,16 +6,16 @@
 		echo "<li><a href='index.php?action=yourstore' class='nav4'>Τα προϊόντα μου</a></li>";
 		echo "<li class='divider'></li>";
 		echo "<li><a href='index.php?action=newproduct' class='nav3'>Νέα αγγελία</a></li>";
-		//Έλεγχος αν έχει αγγελίες pending
+		//Check if user has pending ratings
 		$transactions=get_user_transactions($_SESSION['idUsers']);
 		array_pop($transactions);
-		//Αν υπάρχουν, εμφανίζουμε την βλακίτσα για να αφήσει ραγτινγφξασ
+		//If they exist, we shot the stupid little thing for them to leave rafgasgdfghh
 		if(isset($transactions))
 			echo "<li><a href='index.php?action=feedbacklist' class='nav9'  id='float_right'>Rating pending</a></li>";
     }
     else {
         include 'login.php';
 		echo "<li class='divider'></li>";
-		echo "<li><a href='index.php?action=sighnup' class='nav4'>Εγγραφή</a></li>";
+		echo "<li><a href='index.php?action=sighnup' class='nav4'>Sign up</a></li>";
     }
 ?>

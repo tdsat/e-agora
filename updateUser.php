@@ -13,16 +13,16 @@ if(isset($_SESSION['idUsers'])){
 <form method='POST'>
 <table>
 <tr>
-<td>Όνομα</td><td><input value='<?php echo $user->firstName ?>' type=text name=forname></td>
+<td>Name</td><td><input value='<?php echo $user->firstName ?>' type=text name=forname></td>
 </tr>
 <tr>
-<td>Επίθετο</td><td><input value='<?php echo $user->lastName ?>'  type=text name=surname></td>
+<td>Surname</td><td><input value='<?php echo $user->lastName ?>'  type=text name=surname></td>
 </tr>
 <tr>
 <td>Password</td><td><input value='<?php echo $user->password ?>' type=text name=password></td>
 </tr>
 <tr>
-<td>Διεύθυνση</td><td><input value='<?php echo $user->streetAddress ?>' type=text name=address></td>
+<td>Address</td><td><input value='<?php echo $user->streetAddress ?>' type=text name=address></td>
 </tr>
 <tr>
 <td>email</td><td><input value='<?php echo $user->email ?>' type=text name=email></td>
@@ -52,7 +52,7 @@ if(isset($_SESSION['idUsers'])){
 		}
 
 }
-else echo "Δεν είστε συνδεδεμένος";
+else echo "You are not logged in";
 ?>
 
 			</div>

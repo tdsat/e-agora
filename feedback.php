@@ -5,13 +5,13 @@
 <table width="450px">
 <tr>
  <td colspan="2" style="text-align:center">
-  <h2> Πές μας τη γνώμη σου... </h2>
+  <h2> Give us you opinion... </h2>
  </td>
 </tr>
 
 <tr>
  <td valign="top">
-  <label for="first_name">Όνομα</label>
+  <label for="first_name">Name</label>
  </td>
  <td valign="top">
   <input type="text" name="first_name" maxlength="50" size="30">
@@ -20,7 +20,7 @@
 
 <tr>
  <td valign="top">
-  <label for="last_name">Επώνυμο</label>
+  <label for="last_name">Surname</label>
  </td>
  <td valign="top">
   <input type="text" name="last_name" maxlength="50" size="30">
@@ -38,7 +38,7 @@
 
 <tr>
  <td valign="top">
-  <label for="comments">Σχόλια</label>
+  <label for="comments">Comments</label>
  </td>
  <td valign="top">
   <textarea name="comments" maxlength="1000" cols="25" rows="6"></textarea>

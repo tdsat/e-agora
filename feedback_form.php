@@ -8,11 +8,11 @@ $result=null;
 if(isset($_SESSION['idUsers'])){
 	if(!isset($_POST['subBut'])){ ?>
 <form method='post' action='<?php echo $_SERVER['REQUEST_URI'] ?>'>
-	Πες μας τη γνώμη σου...
+	Give us your opinion...
 	<table border="0" width="450px">
 		<tr>
 			<td colspan="2" style="text-align:center">
-				 Βαθμολογία
+				 Rating
 			</td>
 			<td colspan="2" style="text-align:center">
 				<select name="select">
@@ -31,7 +31,7 @@ if(isset($_SESSION['idUsers'])){
 		</tr>
 		<tr>
 			<td colspan="2" style="text-align:center">
-				 Μήνυμα
+				 Message
 			</td>
 			<td colspan="2" style="text-align:center">
 				<textarea name="comment" cols=40 rows=6>
@@ -41,7 +41,7 @@ if(isset($_SESSION['idUsers'])){
 		</tr>
 		<tr>
 			<td colspan="0" style="text-align:center">
-				<input type="submit" name='subBut' value="Αποστολή">
+				<input type="submit" name='subBut' value="Submit">
 			</td>
 		</tr>
 	</table>
@@ -71,8 +71,8 @@ else{
 		}
 		else died('We are sorry, but there appears to be a problem with the form you submitted.');	
 		if($query)	$result=DBLib::execute_query($query);
-		if(!$result) $error='Υπήρξε πρόβλημα κατα την αποστολή. Δοκιμάστε ξανά';
-		else echo 'Επιτυχής αποθήκευση!Ευχαριστούμε για τον χρόνο σας.';
+		if(!$result) $error='There was an error during submission. Try again';
+		else echo 'Successfully saved! Thank you for your time.';
 	}
 }
 

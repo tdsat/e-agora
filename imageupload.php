@@ -1,13 +1,13 @@
 <?php
 include_once 'buslibs/images.php';
 global $productId;
-//Εκτέλεση του παρακάτω κώδικα μόνο αν υπάρχει κάποιο productId διαθέσιμο
+//Execute the following code only if a productId is available
 if($productId){
-    //Έλεγχος για το πόσες φωτογραφίες έχουν ανέβει ήδη για το προϊόν
+    //Check how many photos have already been uploaded for the product
     $product_images= get_image_count($productId);
     $remainingImages=5-$product_images;
-    //Αν επιτρέπεται να ανεβάσει και άλλες εικόνες, εμφάνισε την φόρμα
-    if($remainingImages>0){ ?>    
+    //If the user is allowed to upload more images, show the form
+    if($remainingImages>0){ ?>
     <form enctype="multipart/form-data" method="POST">
         <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
         <?php
@@ -17,37 +17,37 @@ if($productId){
         <input type="submit" name='imageupbutton' value="Αποθήκευση" />
     </form>
     <?php }
-    //Μώλις πατήσει το κουμπί...
+    //When he clicks the button...
     if(isset($_POST['imageupbutton'])){
-		//...αν έχει επιλέξει αρχεία για ανέβασμα...
+		//...if he has selected images to upload...
         if(isset($_FILES['images'])){
-            //...για κάθε αρχείο που ανέβηκε...
+            //...for every uploaded file...
 			for($i=0;$i<$remainingImages;$i++){
 				$error=NULL;
-				//Αλέγχουμε αν η φορμα ήταν κενή
+				//Check if the form is empty
 			    if( $_FILES['images']['tmp_name'][$i] ){
-					//..έλεγχος για το αν έγινε σωστή λήψη του αρχείου...
+					//..Check if the files were received correctly...
                     if($_FILES['images']['error'][$i]!=0){         
-						//...αν κάτι πήγε στραβά, καταγράφουμε το error
-						$error="Κάτι πήγε στραβά κατα την αποστολή ενός ή περισσότερων αρχείων. Δοκιμάστε ξανά <br />";
+						//...if something went wrong, register the error
+						$error="Something went wrong while uploading one or more files. Try again <br />";
                     }
-					//...αν κάποιο αρχείο είναι μεγαλύτερο απο 1 ΜΒ, εμφάνιση μυνήματος και έξοδος απο το script.
+					//...if a file is more than 1 MB, show a message and exit the script
 					if($_FILES['images']['size'][$i] > 1048576)
-						$error="To μέγιστο επιτρεπτό όριο για κάθε αρχείο είναι 1 ΜΒ.<br />";
-						
-					//Ελέγχουμε αν έχει εμφανιστεί κάποιο πρόβλημα. Αν όχι, ανεβάζουμε το αρχείο
-					//Η  εντολή θα ελέγχξει αν είναι σωστού τύπου και θα επιστρέψει μύνημα λάθους σε
-					//περίπτωση που δεν κάνουν. Βέβαια αυτός ο έλεγχος δεν είναι απόλυτα ασφαλής
-					//αλλά δεν βαριέσαι. THUG LIFE!
+						$error="The maximum allowed size for each file is 1 MB.<br />";
+
+          //Check if there were any errors. If not, upload the file
+					//The  function will check if it's the correct file type and will return an error
+					//message in case they are incorrect. Of course this check is not perfectly safe
+					//but why bother. THUG LIFE!
 					if(!$error){
 						$result=create_image($productId, $_FILES['images']['tmp_name'][$i]);
 						if($result) echo $result;
 						else     echo "<META HTTP-EQUIV='refresh' CONTENT='0'>";
 					}
-					//αλλιώς εμφανίζουμε το error
+					//else we display the error
 					else echo "<div id='error' >".$error."</div>";
 			   }
-			//Και επαναφέρουμε το error flag
+			//and reset the error flag
 			$error=NULL;
             }//end of file loop
 		}

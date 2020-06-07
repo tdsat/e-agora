@@ -6,7 +6,7 @@
 
 <?php
 if(!isset($_SESSION['idUsers']))
-	echo "Πρέπει να συνδεθείτε για να δείτε το προφίλ των μελών μας";
+	echo "You must login to see members' profiles";
 	else {
 if(isset($_GET['user'])){
     $user=$_GET['user'];
@@ -16,11 +16,11 @@ if(isset($_GET['user'])){
     ?>
 <table class='user_info'>
     <tr>
-        <td>Όνομα</td>
+        <td>Name</td>
         <td><?php echo $user->firstName ?></td>
     </tr>
     <tr>
-        <td>Επίθετο</td>
+        <td>Surname</td>
         <td><?php echo $user->lastName ?></td>
     </tr>
     <tr>
@@ -28,19 +28,19 @@ if(isset($_GET['user'])){
         <td><?php echo $user->email ?></td>
     </tr>
     <tr>
-        <td>Χώρα</td>
+        <td>Country</td>
         <td><?php echo $user->country ?></td>
     </tr>
     <tr>
-        <td>Διεύθυνση</td>
+        <td>Address</td>
         <td><?php echo $user->streetAddress ?></td>
     </tr>
     <tr>
-        <td>ΤΚ</td>
+        <td>Postcode</td>
         <td><?php echo $user->postalCode ?></td>
     </tr>
     <tr>
-        <td>Τηλέφωνο</td>
+        <td>Phone</td>
         <td><?php echo $user->phoneNumber ?></td>
     </tr>
     <tr>
@@ -52,8 +52,8 @@ if(isset($_GET['user'])){
         <td><?php echo $user->sellerRating ?></td>
     </tr>
 </table>
-<a href="index.php?action=productlist&user=<?php echo $user->username ?>">Προϊόντα απο αυτόν τον χρήστη</a></br>
-<?php if( $_SESSION['username']==$user->username) {?><a href="index.php?action=updateUser">Επεξεργασία προφίλ</a>
+<a href="index.php?action=productlist&user=<?php echo $user->username ?>">Products from this user</a></br>
+<?php if( $_SESSION['username']==$user->username) {?><a href="index.php?action=updateUser">Edit profile</a>
     <?php
 	}
 }

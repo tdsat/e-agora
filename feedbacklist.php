@@ -4,9 +4,9 @@
 <div class="center_prod_box_big"> 
 
 <?php
-//Μόνο αν είναι συνδεδεμένος
+//Only if you are logged in
 if(isset($_SESSION['idUsers'])){
-	//Διαβάζουμε όλες τις συναλαγές που έχει κάνει
+	//Read the transaction the user has done
 	$transactions=get_rating_pending($_SESSION['idUsers']);
 	//if(isset($transactions)) array_pop($transactions);
 
@@ -14,7 +14,7 @@ if(isset($_SESSION['idUsers'])){
 
 <?php 
 	if(isset($transactions)){
-		//Αν υπάρχουν,τις χωρίζουμε σε αγορές και πωλήσεις
+		//If they exists, separate them to purchases and sales
 		$sales=NULL;
 		$buyes=NULL;
 		
@@ -24,9 +24,9 @@ if(isset($_SESSION['idUsers'])){
 		}
 	//και τις εμφανίζουμε
 ?>
-<span class='red'> Πωλήσεις </span> <hr />
+<span class='red'> Sales </span> <hr />
 <?php if(isset($sales)){ ?>
-<table class='sales_headers'><th>Τίτλος</th><th>Πωλήθηκε σε</th><th>Ημερομηνία πώλησης</th></table>
+<table class='sales_headers'><th>Title</th><th>Sold to</th><th>Sale date</th></table>
 <?php 
 		echo "<table class='sales_pending'>";
 		foreach($sales as $sale){
@@ -42,12 +42,12 @@ if(isset($_SESSION['idUsers'])){
 echo "</table>";
 }?>
 
-<span class='red'> Αγορές </span><hr />
+<span class='red'> Purchases </span><hr />
 
 
 <?php 
 	if(isset($buys)){ ?>
-	<table class='sales_headers'><th>Τίτλος</th><th>Αγοράστηκε από</th><th>Ημερομηνία πώλησης</th></table>
+	<table class='sales_headers'><th>Title</th><th>Bought by</th><th>Date bought</th></table>
 <?php
 		echo "<table class='sales_pending'>";
 		foreach($buys as $buy){
@@ -63,9 +63,9 @@ echo "</table>";
 		echo "</table>";
 	}
 }
-else echo "Δεν βρέθηκε τίποτα";
+else echo "Nothing found";
 }
-else echo "Πρέπει να συνδεθείτε";
+else echo "You must log in";
 ?>
 
 

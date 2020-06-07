@@ -2,7 +2,7 @@
 <div class="center_prod_box_big"> 
 <?php 
 if(!isset($_SESSION['idUsers'])){
-	echo "Πρέπει να συνδεθείτε για να μπορέσετε να δείτε τις βαθμολογίες των μελών μας";
+	echo "You must login in order to see your members' ratings";
 }
 else{
 	if(isset($_GET['user'])){
@@ -18,8 +18,8 @@ else{
 		
 		
 		if(isset($sellerratings)){ ?>
-		<span class='red'>Βαθμολογίες ως πωλητής</span><hr />
-		<table class='rating_details'><th id='fromuser'>Απο </th><th id='score'> Βαθμολογία</th><thid='nostyle'>Σχόλια</th>
+		<span class='red'>Seller ratings</span><hr />
+		<table class='rating_details'><th id='fromuser'>From </th><th id='score'> Rating</th><thid='nostyle'>Comments</th>
 <?php	$i=0;
 		while($sellerratings[$i]){
 			$name=get_field_value('username','users','idUsers',$sellerratings[$i]->idFromUser);
@@ -30,8 +30,8 @@ else{
 		}
 		
 		if(isset($buyerratings)){ ?>
-		<span class='red'>Βαθμολογίες ως αγοραστής</span><hr />
-		<table class='rating_details'><th id='fromuser'>Απο </th><th id='score'> Βαθμολογία</th><th id='comments'>Σχόλια</th>
+		<span class='red'>Buyer ratings</span><hr />
+		<table class='rating_details'><th id='fromuser'>From </th><th id='score'> Rating</th><th id='comments'>Comments</th>
 <?php	$i=0;
 			while($buyerratings[$i]){
 				$name=get_field_value('username','users','idUsers',$buyerratings[$i]->idFromUser);

@@ -8,7 +8,7 @@
         $name=$_GET['s'];
         $name=  mysql_real_escape_string($name);
         if(strlen($name)>=3) $query="SELECT * FROM `products` WHERE `title` LIKE '%{$name}%'";
-		else echo ("Πρέπει να πληκτρολογήσεται τουλάχιστον 3 χαρακτήρες για αναζήτηση");
+		else echo ("You must added at least 3 character to search");
     }
     else if(isset($_GET['cat'])){
         $cat=$_GET['cat'];
@@ -27,9 +27,9 @@
 		if ($num != 0) { ?>
 			<table class="product_list">
 			<tr>
-				<th>Τίτλος</th>
-				<th>Τιμή</th>
-				<th>Περιγραφή</th>
+				<th>Title</th>
+				<th>Price</th>
+				<th>Description</th>
 			</tr>
 	<?php
 			$row = mysql_fetch_array($result);

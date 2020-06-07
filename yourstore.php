@@ -15,7 +15,7 @@ if(isset($_SESSION['idUsers']))
  $num_ids = mysql_num_rows($result_ids);
   
  
- if($num_ids==0) echo "<br>Δεν βρέθηκαν προϊόντα προς εμφάνιση";
+ if($num_ids==0) echo "<br>No products found to display";
  else
  {
   while($productId[] = mysql_fetch_array($result_ids,MYSQL_ASSOC));
@@ -72,7 +72,7 @@ if(isset($_SESSION['idUsers']))
  }
  
 else
- echo "Πρέπει να συνδεθείτε για να δείτε τα προϊόντα σας";
+ echo "You must log in to see your products";
 ?>
 </div>
 <div class="bottom_prod_box_big"><img src='images/details_box_bottom.gif' class='bottom_prod_box_big' /></div>

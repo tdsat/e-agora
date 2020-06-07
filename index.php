@@ -10,7 +10,7 @@ if(isset($_GET['action'])){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>e-agora.gr - Διαδικτυακή Αγορά</title>
+<title>e-agora.gr - Internet Marketplace</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 <link rel="icon" type="image/png"  href="images/favicon.png">
 <!--[if IE 6]>
@@ -68,7 +68,7 @@ function submitForm(formid){
 <div id="main_container">
 	<div class="top_bar">
     	<div class="top_search">
-        	<div class="search_text"> Γρήγορη Αναζήτηση</div>
+        	<div class="search_text"> Quick Search</div>
 			<form method="GET" action="index.php" id='search' >
 				<input type="hidden" name="action" value="productlist" />
 				<input type="text" class="search_input" name="s" />
@@ -97,13 +97,13 @@ function submitForm(formid){
                          <?php include_once 'userstatus.php' ?>
                          <li></li>
                          <li class="divider"></li>
-                         <li><a href="index.php?action=feedback" class="nav6">Επικοινωνία</a>            </li>
+                         <li><a href="index.php?action=feedback" class="nav6">Contact</a>            </li>
                     </ul>
  <div class="right_menu_corner"></div>
             </div><!-- end of menu tab -->  
         
    <div class="left_content">
-    <div class="title_box">Κατηγορίες</div>
+    <div class="title_box">Categories</div>
     
         <ul class="left_menu">
 		<?php include_once 'categorylist.php'; ?>

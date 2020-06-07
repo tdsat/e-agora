@@ -5,8 +5,8 @@
 <body>
 <table border="1">
 <tr>
-<td>Onoma</td>
-<td>Epitheto</td>
+<td>Name</td>
+<td>Surname</td>
 <td>Username</td>
 </tr>
 

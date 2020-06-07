@@ -1,8 +1,8 @@
 <?php
 //TODO : Implement CRUD Functions for ratings
 /*
- * Βασικές συναρτήσεις για τον πίνακα ratings.
- * Τα πολλά λόγια είναι φτώχεια
+ * Basic functions for the ratings table
+ * Talk is cheap
  */
  
  function read_buyer_ratings($userid){
@@ -11,7 +11,7 @@
 	$query="SELECT * FROM `buyerrating` WHERE `idForUser`=$userid AND (`valid`=FALSE OR `comment`<>NULL)";
     DBLib::getrows($query, $rows, $num);
 
-    //Αν δεν βρεθεί εγγραφή, επιστρέφουμε NULL
+    //If no record is found, return NULL
     if ($num == 0) return NULL;
 
     while($ratings[] = mysql_fetch_object($rows));
@@ -27,7 +27,7 @@
 	$query="SELECT * FROM `sellerrating` WHERE `idForUser`=$userid AND (`valid`=FALSE OR `comment`<>NULL)";
     DBLib::getrows($query, $rows, $num);
 
-    //Αν δεν βρεθεί εγγραφή, επιστρέφουμε NULL
+    //If no record is found, return NULL
     if ($num == 0) return NULL;
 
     while($ratings[] = mysql_fetch_object($rows));

@@ -2,7 +2,7 @@
 include_once 'buslibs/users2.php';
 
 if( isset($_SESSION['role']) && $_SESSION['role']=='user')
-        exit("Δεν έχετε τα κατάλληλα δικαιώματα");
+        exit("You don't have the required permissions");
 else{
 		$userDeleted = FALSE;
 		$username=NULL;
@@ -14,8 +14,8 @@ else{
 		{
 			$userDeleted= user_delete($username);
 			//TODO : delete user feedback
-			if($userDeleted) echo "Επιτυχής διαγραφή του χρήστη $username";
-			else echo "Κάτι πήγε στραβά. Δοκιμάστε ξανά";
+			if($userDeleted) echo "Successfully deleted user $username";
+			else echo "Something went wrong. Try again";
 		}
 	}
 ?>

@@ -48,7 +48,7 @@ You can read about all the templating features [here](https://www.php.net/)
 I was going to add some highlights but there are so many little things that it's hard to pick.
 It's like a study in bad design (we actually tried following the MVC model. THAT didn't work out 🤣🤣)
 
-From the curiously named `user2.php` file (what happened to `users.php` ?) to the 10+ parameter functions
+From the curiously named `users2.php` file (what happened to `users.php` ?) to the 10+ parameter functions
 or the super useful comments that warn you to be careful not to brake the database 
 (because data validation is for losers). So many little gems. 
 
@@ -56,15 +56,18 @@ What's your favorite?
 
 ## TODO
 
-* Translate greek comments to english so that you can fully appreciate the genius...ness of it all
-* Dockerize it because why not lol
-* Add licence
+-[x] Translate greek comments to english so that you can fully appreciate the genius...ness of it all
+-[ ] Dockerize it because why not lol
+-[ ] Add licence
 
 ## Final notes
 
 This was a trip down memory lane and if anybody ever reaches this page, I hope
 you had fun at my misfortune. Yeah, it's shitty code and I'm happy I've grown enough
-to realize that. 
+to realize that.
+
+Some of the translations are intentionally wrong because they were also wrong in the
+original version and I wanted to preserve the authentic feeling 😂
 
 PRs (lol) about the code will not be accepted. It's already perfect. For anything else (like 
 making fun of me), be my guest.

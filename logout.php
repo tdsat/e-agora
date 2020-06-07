@@ -1,5 +1,5 @@
 <form method="POST">
-<input class="logout_btn" type="submit" name="logoutbutton" value="Έξοδος">
+<input class="logout_btn" type="submit" name="logoutbutton" value="Logout">
 </form>
 
 <?php 
